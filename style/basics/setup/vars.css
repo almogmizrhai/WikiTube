@@ -1,0 +1,14 @@
+:root {
+    /* pallet */
+    --clr-primary-1: #ee6a43;
+    --clr-primary-2: #9e122c;
+    --clr-primary-3: #fcecdf;
+    --clr-primary-4: #333;
+
+    
+
+    /* mq */
+    --s: 600px;
+    --m: 900px;
+    --l: 1200px;
+}

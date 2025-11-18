@@ -1,0 +1,53 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-primary-1);
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 001em;
+    text-wrap: balance;
+    color: var(--clr-primary-4);
+}
+
+p{
+    margin: 001em;
+    text-wrap: pretty;
+    color: var(--clr-primary-4);
+}
+
+ul, li{
+    list-style: none;
+    padding: 0;
+}
+
+a[class]{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:not([class]){
+    text-decoration: underline;
+    color: revert;
+}
+
+img, video, canvas, picture, svg{
+    display: block;
+    max-width: 100%;
+}
+
+input, select, textarea, button{
+    font: inherit;
+    max-width: 100%;
+    border-radius: 8px;
+    text-align: center;
+}
+/*taptargets:*/
+nav, button{
+    min-width: 48px;
+    min-height: 48px;
+}

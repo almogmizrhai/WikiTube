@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/styles.css">
+    <title>WikiTube</title>
+</head>
+<body onload="onInit()">
+
+    <header>
+        <h1 class="logo">WikiTube</h1>
+    </header>
+
+    <main class="main-section">
+        <section class="search-section flex">
+            <input type="text" id="search-input" placeholder="search" >
+            <button class="btn" onclick="onSearch()">Search</button>
+        </section>
+        
+        <section class="result flex">
+            
+            <div class="search-result grid">
+                <div class="video-card flex">
+                    <img src="" alt="">
+                    <h3>Video Title</h3>
+                </div>
+                <div class="video-card flex">
+                    <img src="" alt="">
+                    <h3>Video Title</h3>
+                </div>
+                <div class="video-card flex">
+                    <img src="" alt="">
+                    <h3>Video Title</h3>
+                </div>
+            </div>
+            
+            <div class="videos-selected grid">
+                <div class="video-player">
+                    <h2>Video </h2>
+                    <img src="" alt="">
+                </div>
+                
+                <div class="video-info">
+                    <h2>Video Title</h2>
+                    <p>Video Description from Wikipedia</p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="flex">
+        <p>© 2025 WikiTube. All rights reserved.</p>
+    </footer>
+
+
+
+    <script src="js/services/promises.service.js"></script>
+    <script src="js/services/wikiTube.service.js"></script>
+    <script src="js/services/utils.service.js"></script>
+
+    <script src="js/wikiTube.controller.js"></script>
+</body>
+</html>
