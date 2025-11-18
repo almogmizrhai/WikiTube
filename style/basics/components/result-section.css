@@ -4,7 +4,11 @@
 }
 
 
+/* LEFT COLUMN – VIDEO LIST */
 /* search-result */
+.search-result {
+    gap: 15px;
+}
 
 .video-card{
     background-color: var(--clr-primary-4);
@@ -19,8 +23,9 @@
 
     img{
         border-radius: 8px;
-        width: 100%;
-        height: auto;
+        width: 120px;
+        height: 70px;
+        object-fit: cover;
     }
 }
 
@@ -29,7 +34,14 @@
     cursor: pointer;
 }
 
+/* RIGHT COLUMN – SELECTED VIDEO */
+
 /* video selected */
+
+.videos-selected {
+    gap: 20px;
+    flex: 1;
+}
 
 .video-player{
     width: 100%;
@@ -40,6 +52,12 @@
     h2{
         color: var(--clr-primary-3);
     }
+}
+
+.video-player iframe,
+.video-player img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 .video-info{
