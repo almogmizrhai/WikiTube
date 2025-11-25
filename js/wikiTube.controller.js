@@ -7,8 +7,13 @@ function onInit() {
 
 function onSearch() {
   const elSearchInput =document.querySelector('.search')
+  const elIntro = document.querySelector('.intro')
   console.log('Searching for:', elSearchInput.value)
   getVideos(elSearchInput.value)
+  const elLoader = document.querySelector('.loader')
+  elLoader.classList.remove('hide')
+  elIntro.classList.add('hide')
+  
 }
 
 function renderVideoCards(data){

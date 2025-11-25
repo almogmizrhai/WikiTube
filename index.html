@@ -12,11 +12,19 @@
         <h1 class="logo">🌐 WikiTube ▶</h1>
     </header>
 
-    <main class="main-section">
+    <main class="main-section grid">
+
+        <section class="intro flex">
+            <h2>Welcome to WikiTube</h2>
+            <p>Your gateway to exploring Wikipedia videos effortlessly. Search for any topic and dive into a world of knowledge through curated video content.</p>
+        </section>
+
         <section class="search-section flex">
             <input type="text" id="search-input" class="search" placeholder="search" >
             <button class="btn" onclick="onSearch()">Search</button>
         </section>
+        
+        <img src="img/loader.svg" alt="" class="loader hide">
         
         <section class="result flex">
             

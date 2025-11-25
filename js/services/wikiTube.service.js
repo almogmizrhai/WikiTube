@@ -13,4 +13,8 @@ function getVideos(value) {
             renderVideoPlayer(data.items[0].id.videoId)
         })
         .catch(err => console.error(err))
+        .finally(() => {
+            const elLoader = document.querySelector('.loader')
+            elLoader.classList.add('hide')
+        })
 }
