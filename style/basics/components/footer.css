@@ -6,3 +6,7 @@ footer {
     background-color: var(--clr-primary-base);
     color: var(--clr-primary-2);
 }
+
+.history-list{
+    gap: 5px;
+}

@@ -46,7 +46,15 @@
         </section>
     </main>
 
-    <footer class="flex">
+    <footer class="footer">
+        <section class="histoy-search ">
+            <h3>Search History</h3>
+            <ul class="history-list clean-list flex">
+                <!-- Search history items will be dynamically inserted here -->
+            </ul>
+            <button class="btn" onclick="clearSearchHistory()">Clear History</button>
+        </section>
+
         <p>© 2025 WikiTube. All rights reserved.</p>
     </footer>
 
@@ -54,7 +62,7 @@
 
     <script src="js/services/promises.service.js"></script>
     <script src="js/services/wikiTube.service.js"></script>
-    <script src="js/services/utils.service.js"></script>
+    <script src="js/services/wikiTube.storage.service.js"></script>
 
     <script src="js/wikiTube.controller.js"></script>
 </body>

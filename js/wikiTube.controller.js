@@ -1,6 +1,9 @@
 'use strict'
 
 
+const searchInputs = []
+const STORAGE_KEY = 'wikiTubeSearchHistory'
+
 function onInit() {
   console.log('WikiTube Controller Init')
 }
@@ -10,9 +13,11 @@ function onSearch() {
   const elIntro = document.querySelector('.intro')
   const elLoader = document.querySelector('.loader')
 
-  console.log('Searching for:', elSearchInput.value)
-
   getVideos(elSearchInput.value)
+
+  searchInputs.push(elSearchInput.value)
+  saveToStorage(STORAGE_KEY, searchInputs)
+  renderSearchHistory()
 
   elLoader.classList.remove('hide')
   elIntro.classList.add('hide')
@@ -20,8 +25,6 @@ function onSearch() {
 }
 
 function renderVideoCards(data){
-
-  console.log('Rendering Video Cards:', data)
 
   const elSearchResult = document.querySelector('.search-result')
 
@@ -37,8 +40,6 @@ function renderVideoCards(data){
 }
 
 function renderVideoPlayer(videoId,videoTitle){
-
-  console.log('Playing Video', videoId, videoTitle)
 
   const elVideoPlayer = document.querySelector('.video-player')
   if (!elVideoPlayer) {
@@ -58,7 +59,6 @@ function renderVideoInfo(videoTitle){
 
   getWikiArticles(videoTitle)
   .then(infoVideo => {
-    console.log('Wiki Info:', infoVideo)
   
     const elVideoInfo = document.querySelector('.video-info')
     const strHtml = `
@@ -72,4 +72,29 @@ function renderVideoInfo(videoTitle){
     console.error(err)
   })
 
+}
+
+function renderSearchHistory(){
+  const elHistoryList = document.querySelector('.history-list')
+
+  const storedHistory = loadFromStorage(STORAGE_KEY)
+  console.log('Stored History:', storedHistory)
+  
+  if (storedHistory.length === 0) {
+    console.log('No search history found in storage.')
+    return
+  }
+  else {
+    console.log('Loaded search history from storage:', storedHistory)
+    const strHtml = storedHistory.map(input => {
+    return `<li>${input}</li>`
+  })
+  elHistoryList.innerHTML = strHtml.join('')
+  }
+}
+
+function clearSearchHistory() {
+  localStorage.removeItem(STORAGE_KEY)
+  searchInputs.length = 0
+  renderSearchHistory()
 }
